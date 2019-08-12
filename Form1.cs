@@ -16,5 +16,12 @@ namespace DateFormatter
         {
             InitializeComponent();
         }
+
+        private void TxtDate_DoubleClick(object sender, EventArgs e)
+        {
+            DateTime date; // declare a variable to hold the input from the box
+            string dateFinal = DateTime.TryParse(txtDate.Text, out date) ? date.ToLongDateString() : "Cannot convert";
+            lbldate.Text = dateFinal;
+        }
     }
 }
